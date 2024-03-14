@@ -1,0 +1,9 @@
+body {
+  background-color: #f9d4dd;;
+  margin: 0;
+  overflow: hidden;
+  display: flex; /* flexboxcentrar */
+  justify-content: center; /* cntrar horizontalmente */
+  align-items: center; /* Centrar verticalmente */
+  height: 100vh; /*  alto del cuerpo al 100% */
+}

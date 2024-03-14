@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='css.css'>
+    <title>paolita</title>
+</head>
+<body>
+    <nav>
+
+        <h1>paolita</h1>
+        <ul>
+            <li><a href="../index.html"><img src="..//img/Retriceso.png" width="60">ㅤ</a></li>
+        </ul>
+
+    </nav>
+    <div class="contenedor3">
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+                <img src="../img/cazzu.jpg" width="250"><br>
+                <h2>Chapiadora</h2><br>
+                <h3>cazzu</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="Cazzu - Chapiadora.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+        <br><br>
+            <div class="contenedor4">
+                <img src="../img/dukiemi.jpg" width="250"><br>
+                <h2>como si no importara</h2><br>
+                <h3>Duki ft Emilia</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="Emilia  Duki  Como Si No Importara.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+                <img src="../img/nicki.jpg" width="250"><br>
+                <h2>BZR music</h2><br>
+                <h3>SESSSION 13</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="NICKI NICOLE  BZRP Music Sessions.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+                <img src="../img/duki.jpg" width="250"><br>
+                <h2>Si Me Sobrara el Tiempo</h2><br>
+                <h3>Duki</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="Duki - Si Me Sobrara el Tiempo.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+                <img src="../img/paulo.jpg" width="250"><br>
+                <h2>Condenado para el millon</h2><br>
+                <h3>Paulo Londra</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="Paulo Londra - Condenado Para El Millon (Official Video).mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+
+                <img src="../img/dukishe.png" width="250"><br>
+                <h2>She Don't Give a FO</h2><br>
+                <h3>duki ft khea</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="DUKI - She Dont Give a FO ft. Khea.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+                <img src="../img/alfredo.jpg" width="250"><br>
+                <h2>El precio de la soledad</h2><br>
+                <h3>Alfredo olivas</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="Alfredo Olivas - El Precio De La Soledad.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+        <div class="parte">
+            <br><br>
+            <div class="contenedor4">
+                <img src="../img/loca.jpg" width="250"><br>
+                <h2>LOCA </h2><br>
+                <h3>DUKI . KEHA . CAZZU</h3>
+                <div class="music"><audio id="audio1" controls onended="playNext()">
+                    <source src="Khea - Loca ft. Duki  Cazzu.mp3" type="audio/mpeg">
+                    Tu navegador no soporta el elemento de audio.
+                </audio></div>
+            </div>
+        </div>
+      
+    
+    </div>
+  
+    <footer>
+        
+        <a href="#"><img src="../img/cinnamoroll-sanrio-characters.gif" width="160"  ></a>
+        <p><br><br><br>Para mi personita, que más especial, te amo <br><br><br> </p>
+        
+    </footer>
+    <script>
+        // datos del mp3
+        const audios = document.querySelectorAll('audio');
+        let currentAudioIndex =0;
+        function playNext() {
+            // detener la cancion de ese momenti
+            audios[currentAudioIndex].pause();
+            // agregar  el indice para poder reproducir la proxima cancion
+            currentAudioIndex++;
+            //checar si no hay canciones disponibkles
+            if (currentAudioIndex< audios.length) {
+                // next de cancion 
+                audios[currentAudioIndex].play();
+            } else {
+                // si se acabaron , vyuelve a la primefra 
+                currentAudioIndex = 0;
+                audios[currentAudioIndex].play();
+            }
+        }
+
+        // evento
+        audios.forEach(audio => {
+            audio.addEventListener('play', function() {
+                // deteber aquellos que no, si hay otrio
+                audios.forEach(a => {
+                    if (a !== this) {
+                        a.pause();
+                    }
+                });
+            });
+        });
+    </script>
+   
+    
+    
+</body>
+</html>
